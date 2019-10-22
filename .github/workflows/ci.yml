@@ -8,5 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - uses: ./
     - name: test1
       uses: actions/github-action-demo@v1
