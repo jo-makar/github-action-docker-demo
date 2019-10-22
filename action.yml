@@ -1,4 +1,5 @@
-name: test
 runs:
   using: docker
   image: Dockerfile
+
+# Ref: https://help.github.com/en/github/automating-your-workflow-with-github-actions/metadata-syntax-for-github-actions
