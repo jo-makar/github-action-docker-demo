@@ -8,7 +8,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
     # Use the action.yml in the specified directory
-    - uses: ./
+    - uses: ./github/actions/action1
 
 # Ref: https://help.github.com/en/github/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
 #      https://help.github.com/en/github/automating-your-workflow-with-github-actions/creating-a-docker-container-action
