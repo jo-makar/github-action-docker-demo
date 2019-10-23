@@ -1,7 +1,8 @@
 #!/bin/sh
 
-git checkout https://$GITHUB_ACTOR:$INPUT_GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git
-cd $(basename $GITHUB_REPOSITORY)
+set
+#git checkout https://$GITHUB_ACTOR:$INPUT_GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git
+#cd $(basename $GITHUB_REPOSITORY)
 
 #go get -v -t -d ./...
 #go build -v .
