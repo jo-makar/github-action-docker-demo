@@ -1,3 +1,10 @@
 #!/bin/sh
-echo indicate action success or failure by exit code
-exit 0
+
+git checkout https://$GITHUB_ACTOR:$INPUT_GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git
+cd $(basename $GITHUB_REPOSITORY)
+
+#go get -v -t -d ./...
+#go build -v .
+#go test -v ./...
+
+# Success or failure is indicated by exit code

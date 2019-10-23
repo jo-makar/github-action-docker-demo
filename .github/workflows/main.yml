@@ -1,14 +1,43 @@
-on: push
+name: main
+
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
+
     # To use this repo's private action must first checkout the repo
-    - name: Checkout
+    - name: checkout
       uses: actions/checkout@v1
-    # Use the action.yml (and ancilliary files) in the specified directory
-    - uses: ./.github/actions/action1
+
+    ####################################################################################################
+
+    # The following does the same as what is done in the private action below,
+    # however the private action (via the Dockerfile) allows more control over the environment
+
+    #- name: go-get
+    #  run: go get -v -t -d ./...
+    #- name: go-build
+    #  run: go build -v .
+    #- name: go-test
+    #  run: go test -v ./...
+
+    ####################################################################################################
+
+    # Private actions based on Dockerfiles within the repository have limitations (as of Oct 2019)
+    # - cannot access files outside the specified uses directory (used Dockerfile must be in same dir as source)
+    # - cannot specify a local Dockerfile name that is not Dockerfile (potentially requires renaming an existing Dockerfile)
+    # The workaround is to do a checkout from within the docker container instead of using the checkout from the runner
+
+    # Use the action.yml (and ancilliary files, eg Dockerfile) in the specified directory
+    - name: action1
+      uses: ./.github/actions/action1
+
+    ####################################################################################################
 
 # Ref: https://help.github.com/en/github/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
 #      https://help.github.com/en/github/automating-your-workflow-with-github-actions/creating-a-docker-container-action
