@@ -1,3 +1,3 @@
 #!/bin/sh
-echo run
-exit 1
+echo indicate action success or failure by exit code
+exit 0
