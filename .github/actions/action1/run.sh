@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set
+# TODO Extra steps required for $INPUT_GITHUB_TOKEN to be present here
 #git checkout https://$GITHUB_ACTOR:$INPUT_GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git
 #cd $(basename $GITHUB_REPOSITORY)
 
