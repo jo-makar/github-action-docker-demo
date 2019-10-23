@@ -7,7 +7,7 @@ jobs:
     # To use this repo's private action must first checkout the repo
     - name: Checkout
       uses: actions/checkout@v1
-    # Use the action.yml in the specified directory
+    # Use the action.yml (and ancilliary files) in the specified directory
     - uses: ./.github/actions/action1
 
 # Ref: https://help.github.com/en/github/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
